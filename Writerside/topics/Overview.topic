@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="Overview" id="Overview">
+
+    <p>
+        All relevant documents and resources that are necessary to design and implement the Shareable Lock System
+        are provided in site. The Shareable Lock System is a system that allows users to share locks with other users,
+        and the locks are controlled remotely.
+    </p>
+
+
+    <chapter title="Microservice list" id="microservices-list">
+
+        <table>
+            <tr>
+                <td>Application</td>
+                <td>Port</td>
+                <td>API Path</td>
+            </tr>
+            <tr>
+                <td>DiscoveryApplication</td>
+                <td>8761</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>GatewayApplication</td>
+                <td>8222</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>LockApplication</td>
+                <td>8300</td>
+                <td>/api/v1/locks</td>
+            </tr>
+            <tr>
+                <td>MessageApplication</td>
+                <td>8200</td>
+                <td>/api/v1/messages</td>
+            </tr>
+            <tr>
+                <td>SchoolApplication</td>
+                <td>8070</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>UserApplication</td>
+                <td>8100</td>
+                <td>/api/v1/users</td>
+            </tr>
+            <tr>
+                <td>ConfigServerApplication</td>
+                <td>8888</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>StudentApplication</td>
+                <td>8090</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>StaticServerApplication</td>
+                <td>8400</td>
+                <td>/api/v1/files/</td>
+            </tr>
+            <tr>
+                <td>Nginx</td>
+                <td>8500</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>MQTT</td>
+                <td>8600</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Logging</td>
+                <td>8700</td>
+                <td>/api/v1/logs/</td>
+            </tr>
+            <tr>
+                <td>authentication</td>
+                <td>8800</td>
+                <td>/api/v1/auth/</td>
+            </tr>
+        </table>
+
+    </chapter>
+
+    <chapter title="APIs of the Backend Server" id="api-chapter" >
+        The backend server provides a set of endpoints that allow users to interact with the Sharable Lock System. It is
+        defined in the <a href="APIs.md">website</a>
+
+    </chapter>
+    <chapter title="Glossary" id="glossary">
+        <p>A definition list or a glossary:</p>
+        <deflist>
+            <def title="Term1">
+                This is the definition of the first term.
+            </def>
+            <def title="Term2">
+                This is the definition of the second term.
+            </def>
+        </deflist>
+    </chapter>
+</topic>
