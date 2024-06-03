@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  INSTANCE: 'Writerside/ShareableLockDocs'
+  INSTANCE: 'Writerside/s'
   ARTIFACT: 'webHelpS2-all.zip'
   DOCKER_VERSION: '241.15989'
 
