@@ -18,4 +18,32 @@
         <description>Created after removal of "Starter" from ShareableLockDocs</description>
         <accepts>starter.html</accepts>
     </rule>
+    <rule id="398f0dc9">
+        <description>Created after removal of "User" from ShareableLockDocs</description>
+        <accepts>User.html</accepts>
+    </rule>
+    <rule id="56dde071">
+        <description>Created after removal of "User API" from ShareableLockDocs</description>
+        <accepts>User-API.html</accepts>
+    </rule>
+    <rule id="628ee689">
+        <description>Created after removal of "/api/v1/files/upload-secrets POST" from ShareableLockDocs</description>
+        <accepts>api_v1_files_upload_secrets_POST.html</accepts>
+    </rule>
+    <rule id="269e7430">
+        <description>Created after removal of "/api/v1/files/upload GET" from ShareableLockDocs</description>
+        <accepts>api_v1_files_upload_GET.html</accepts>
+    </rule>
+    <rule id="1bb367c9">
+        <description>Created after removal of "API Reference" from ShareableLockDocs</description>
+        <accepts>API_Reference2.html</accepts>
+    </rule>
+    <rule id="f77021f">
+        <description>Created after removal of "Delete an existing user" from ShareableLockDocs</description>
+        <accepts>Delete_an_existing_user.html</accepts>
+    </rule>
+    <rule id="4c68c789">
+        <description>Created after removal of "API Reference" from ShareableLockDocs</description>
+        <accepts>API_Reference.html</accepts>
+    </rule>
 </rules>

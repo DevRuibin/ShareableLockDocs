@@ -90,19 +90,10 @@
     </chapter>
 
     <chapter title="APIs of the Backend Server" id="api-chapter" >
-        The backend server provides a set of endpoints that allow users to interact with the Sharable Lock System. It is
-        defined in the <a href="APIs.md">website</a>
+        The backend server provides a set of endpoints that allow users to interact with the Sharable Lock System. A
+        overall definition can be
+        found in the <a href="APIs.md">page</a>. A Swagger style API can be found <a href="APIs-in-OpenAPI.md">here</a>
 
     </chapter>
-    <chapter title="Glossary" id="glossary">
-        <p>A definition list or a glossary:</p>
-        <deflist>
-            <def title="Term1">
-                This is the definition of the first term.
-            </def>
-            <def title="Term2">
-                This is the definition of the second term.
-            </def>
-        </deflist>
-    </chapter>
+
 </topic>

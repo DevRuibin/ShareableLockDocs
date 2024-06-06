@@ -6,7 +6,29 @@
                  name="ShareableLockDocs"
                  start-page="Overview.topic">
 
-    <toc-element topic="Overview.topic"/>
+    <toc-element topic="Overview.topic">
+        <toc-element topic="APIs.md"/>
+        <toc-element topic="User-Scenario.md"/>
+    </toc-element>
+    <toc-element topic="APIs-in-OpenAPI.md">
+        <toc-element topic="Log.md">
+            <toc-element topic="Create-a-log.md"/>
+        </toc-element>
+        <toc-element topic="Static-File.md">
+            <toc-element topic="api_v1_files_upload_POST.topic"/>
+        </toc-element>
+        <toc-element topic="Message.md">
+            <toc-element topic="api_v1_messages_userId_GET.topic"/>
+            <toc-element topic="api_v1_messages_id_PATCH.topic"/>
+            <toc-element topic="api_v1_messages_id_DELETE.topic"/>
+            <toc-element topic="api_v1_messages_POST.topic"/>
+        </toc-element>
+        <toc-element topic="User.md">
+            <toc-element topic="Create_a_new_user.topic"/>
+            <toc-element topic="Update_an_existing_user.topic"/>
+            <toc-element topic="Change-the-password.topic"/>
+            <toc-element topic="Find_user_by_ID.topic"/>
+        </toc-element>
+    </toc-element>
     <toc-element topic="Submodule.md"/>
-    <toc-element topic="APIs.md"/>
 </instance-profile>

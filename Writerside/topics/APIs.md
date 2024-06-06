@@ -3,6 +3,7 @@
 ## Overview
 
 This document provides a detailed description of the APIs used by the mobile app and within the microservices. For security reasons, all requests must include a **token** in the **header**. A request is approved if the token is valid and the request only modifies data that belongs to the user who sends the request. For example, a user can change their own profile information but not that of other users. Fine-grained control is specified in each API description.
+To see the API in more detail, check the [page](APIs-in-OpenAPI.md)
 
 ## Main Services API
 

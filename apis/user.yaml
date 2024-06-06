@@ -1,0 +1,180 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8100
+  description: Generated server url
+paths:
+  /api/v1/users/{id}:
+    get:
+      tags:
+      - user-controller
+      summary: Retrieve user information.
+      operationId: findById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserModel'
+    put:
+      tags:
+      - user-controller
+      summary: Update an existing user
+      operationId: update
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: user
+        in: query
+        required: true
+        schema:
+          $ref: '#/components/schemas/UserModel'
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserModel'
+    delete:
+      tags:
+      - user-controller
+      summary: Delete an existing user
+      operationId: delete
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /api/v1/users/{id}/change-password:
+    put:
+      tags:
+      - user-controller
+      summary: Change the password of an existing user
+      operationId: changePassword
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangePwdRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserModel'
+  /api/v1/users:
+    post:
+      tags:
+      - user-controller
+      summary: Create a new user
+      operationId: create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserModel'
+  /api/v1/users/login:
+    post:
+      tags:
+      - user-controller
+      summary: ' Login a user'
+      description: Login user with email and password
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+        required: true
+      responses:
+        "200":
+          description: User logged in successfully
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserModel'
+        "403":
+          description: User not found or password is incorrect
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/UserModel'
+components:
+  schemas:
+    UserModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        username:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        avatar:
+          type: string
+        gender:
+          type: string
+          enum:
+          - MALE
+          - FEMALE
+          - OTHER
+        admin:
+          type: boolean
+    ChangePwdRequest:
+      type: object
+      properties:
+        oldPassword:
+          type: string
+        newPassword:
+          type: string
+    UserRequest:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
