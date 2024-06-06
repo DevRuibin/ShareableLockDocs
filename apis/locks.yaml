@@ -1,0 +1,209 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8300
+  description: Generated server url
+paths:
+  /api/v1/locks:
+    post:
+      tags:
+      - lock-controller
+      summary: Create a new lock
+      operationId: createLock
+      parameters:
+      - name: lockModel
+        in: query
+        required: true
+        schema:
+          $ref: '#/components/schemas/LockModel'
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/LockModel'
+  /api/v1/locks/{id}:
+    get:
+      tags:
+      - lock-controller
+      summary: Get a lock by ID
+      operationId: getLock
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/LockModel'
+    delete:
+      tags:
+      - lock-controller
+      summary: Delete a lock by ID
+      operationId: deleteLock
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/LockModel'
+    patch:
+      tags:
+      - lock-controller
+      summary: Update a lock by ID
+      description: "Update a lock's specific field by ID.it can be used to update\
+        \ the name, description, owner, users, managers, and status of the lock."
+      operationId: updateLock
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: body
+        in: query
+        required: true
+        schema:
+          $ref: '#/components/schemas/PatchRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/LockModel'
+  /api/v1/locks/user/{id}:
+    get:
+      tags:
+      - lock-controller
+      summary: Get all locks by user ID
+      operationId: getLocksByUserID
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LockModel'
+components:
+  schemas:
+    LockModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        picture:
+          type: string
+        uid:
+          type: string
+        power:
+          type: number
+          format: float
+        online:
+          type: boolean
+        locked:
+          type: boolean
+        ownerId:
+          type: integer
+          format: int64
+        latitude:
+          type: number
+          format: float
+        longitude:
+          type: number
+          format: float
+        reportBattery:
+          type: integer
+          format: int32
+        reportLocation:
+          type: integer
+          format: int32
+        users:
+          type: array
+          items:
+            type: integer
+            format: int64
+        managers:
+          type: array
+          items:
+            type: integer
+            format: int64
+    PatchRequest:
+      type: object
+      properties:
+        eventType:
+          type: string
+          enum:
+          - CREATE_LOCK
+          - ADD_USER
+          - REMOVE_USER
+          - ADD_MANAGER
+          - REMOVE_MANAGER
+          - DELETE_LOCK
+          - CHANGE_PICTURE
+          - CHANGE_NAME
+          - CHANGE_POWER
+          - CHANGE_ONLINE
+          - CHANGE_LOCKED
+          - CHANGE_LOCATION
+          - CHANGE_REPORT_BATTERY
+          - CHANGE_REPORT_LOCATION
+        name:
+          type: string
+        picture:
+          type: string
+        power:
+          type: number
+          format: float
+        online:
+          type: boolean
+        locked:
+          type: boolean
+        latitude:
+          type: number
+          format: float
+        longitude:
+          type: number
+          format: float
+        reportBattery:
+          type: integer
+          format: int32
+        managerId:
+          type: integer
+          format: int64
+        userId:
+          type: integer
+          format: int64
+        reportLocation:
+          type: integer
+          format: int32

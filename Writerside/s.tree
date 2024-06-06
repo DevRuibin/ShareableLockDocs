@@ -11,6 +11,13 @@
         <toc-element topic="User-Scenario.md"/>
     </toc-element>
     <toc-element topic="APIs-in-OpenAPI.md">
+        <toc-element topic="API_Reference.md">
+            <toc-element topic="Get_all_locks_by_user_ID.md"/>
+            <toc-element topic="Update_a_lock_by_ID.md"/>
+            <toc-element topic="Delete_a_lock_by_ID.md"/>
+            <toc-element topic="Get_a_lock_by_ID.md"/>
+            <toc-element topic="Create_a_new_lock.md"/>
+        </toc-element>
         <toc-element topic="Log.md">
             <toc-element topic="Create-a-log.md"/>
         </toc-element>
