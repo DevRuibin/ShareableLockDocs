@@ -6,13 +6,28 @@
        title="Overview" id="Overview">
 
     <p>
+        Our goal is to implement a lock that can be controlled through LoRaWAN. It is the Master's thesis topic
+        of <a href="https://github.com/devruibin">Ruibin Zhang</a> and <a href="https://github.com/hasancpp">Hasan
+        Bilgin</a>. Since sensitive information is included in the hardware part, so we choose that we won't
+        put the code base in an online community. But for the software part, which includes a
+        <a href="https://github.com/DevRuibin/SharableLockBackend">backend server</a> designed
+        using micro architecture and an <a href="https://github.com/DevRuibin/SharableLockAndroid">Android
+        Application</a> developed with Kotlin can be found in GitHub.
+    </p>
+    <p>
         All relevant documents and resources that are necessary to design and implement the Shareable Lock System
         are provided in site. The Shareable Lock System is a system that allows users to share locks with other users,
         and the locks are controlled remotely.
     </p>
 
 
-    <chapter title="Microservice list" id="microservices-list">
+    <chapter title="User Scenarios" id="user_scenarios">
+        A simple user scenarios in the view of a user is provided <a href="User-Scenario.md">here</a>. We may
+        would publish a formal software requirements in the future.
+    </chapter>
+
+
+    <chapter title="BackendMicroservice list" id="microservices-list">
 
         <table>
             <tr>
